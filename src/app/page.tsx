@@ -2,7 +2,11 @@
 import React from "react";
 import axios from "axios";
 
-
+type User = {
+  name: string;
+  username: string;
+  email: string;
+}
 
 export default function Home() {
 
@@ -18,7 +22,7 @@ export default function Home() {
   }
 
 
-    const userArray = users.length ? users.map((user)=> {
+    const userArray = users.length ? users.map((user: User)=> {
       return (
         <div className="user">
           <div>{user.name}</div>
