@@ -2,6 +2,7 @@
 import React from "react";
 import axios from "axios";
 
+
 type User = {
   name: string;
   username: string;
@@ -12,9 +13,13 @@ export default function Home() {
 
   const [users, setUsers] = React.useState([])
 
+  const url = process.env.NEXT_PUBLIC_BASE_URL;
+  console.log('url = ', url);
+  
+
   const fetchUsers = async () => {
     const {data} = await axios.get(
-      'http://localhost:3000/api/users'
+      `${url}/api/users`
     );
     console.log('data = ', userArray);
     
